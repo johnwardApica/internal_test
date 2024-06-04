@@ -1096,7 +1096,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(running_execution_Count{hostname=~'.*'} OR max_running_executions{hostname=~'.*'})&duration=1h&step=5m",
+          "query": "(running_execution_Count{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Running Executions",
           "schema": "running_execution_Count",
