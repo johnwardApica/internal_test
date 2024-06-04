@@ -1248,12 +1248,6 @@
           "data_source_name": "Apica Monitoring"
         }
       ]
-    },
-    {
-      "key": "alerts",
-      "title": "Alerts",
-      "order": "9",
-      "type": "alerts"
     }
   ],
   "header": {
