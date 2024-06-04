@@ -1077,7 +1077,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(queued_execution_count{hostname=~'.*'} OR max_queued_executions{hostname=~'.*'})&duration=1h&step=5m",
+          "query": "(queued_execution_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Queued Executions",
           "schema": "queued_execution_count",
@@ -1089,7 +1089,7 @@
               "yLabel": "value",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "__name__",
+              "groupBy": "hostname",
               "errorColumn": ""
             }
           },
@@ -1108,7 +1108,7 @@
               "yLabel": "value",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "__name__",
+              "groupBy": "hostname",
               "errorColumn": ""
             }
           },
