@@ -171,31 +171,6 @@
             }
           },
           "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "",
-          "chart_type": "counter",
-          "name": "Current Head Node",
-          "schema": "",
-          "options": {
-            "label": "Actual (Avg of Avg)",
-            "order": 11,
-            "descriptions": "Current Head Node"
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "",
-          "chart_type": "counter",
-          "name": "Container Exceptions",
-          "schema": "",
-          "options": {
-            "label": "Actual (Avg of Avg)",
-            "order": 12,
-            "descriptions": "Container Exceptions"
-
-          },
-          "data_source_name": "Apica Monitoring"
         }
       ]
     },
