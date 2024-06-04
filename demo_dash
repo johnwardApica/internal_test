@@ -360,16 +360,35 @@
       "order": "3",
       "queriesList": [
         {
-          "query": "sum by (hostname) (system_filesystem_usage_bytes{state=~'.*',ostype='linux',hostname=~'.*',device='/dev/sda1'}) or (system_filesystem_usage_bytes{state=~'free',ostype='linux',hostname=~'.*',device='/dev/sda1'})&duration=30m&step=5m",
+          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='write'}[5m])))&duration=1h&step=1m",
           "chart_type": "line",
-          "name": "Local Storage Space (Actual vs Total)",
-          "schema": "system_filesystem_usage_bytes",
+          "name": "Local Storage Write I/O",
+          "schema": "",
           "options": {
-            "label": "Actual vs Total",
+            "label": "Bytes/sec",
             "order": 1,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "%",
+              "yLabel": "Bytes/sec",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='read'}[5m])))&duration=1h&step=1m",
+          "chart_type": "line",
+          "name": "Local Storage Read I/O",
+          "schema": "",
+          "options": {
+            "label": "Bytes/sec",
+            "order": 2,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "Bytes/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -385,29 +404,10 @@
           "schema": "",
           "options": {
             "label": "%",
-            "order": 2,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "%",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (system_filesystem_inodes_usage{state=~'.*'}) or (system_filesystem_inodes_usage{state=~'free'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Local Storage iNodes (Actual vs Total)",
-          "schema": "",
-          "options": {
-            "label": "Count",
             "order": 3,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Count",
+              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -436,16 +436,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='write'}[5m])))&duration=1h&step=1m",
+          "query": "sum by (hostname) (system_filesystem_usage_bytes{state=~'.*',ostype='linux',hostname=~'.*',device='/dev/sda1'}) or (system_filesystem_usage_bytes{state=~'free',ostype='linux',hostname=~'.*',device='/dev/sda1'})&duration=30m&step=5m",
           "chart_type": "line",
-          "name": "Local Storage Write I/O",
-          "schema": "",
+          "name": "Local Storage Space (Actual vs Total)",
+          "schema": "system_filesystem_usage_bytes",
           "options": {
-            "label": "Bytes/sec",
+            "label": "Actual vs Total",
             "order": 5,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Bytes/sec",
+              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -455,16 +455,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='read'}[5m])))&duration=1h&step=1m",
+          "query": "sum by (hostname) (system_filesystem_inodes_usage{state=~'.*'}) or (system_filesystem_inodes_usage{state=~'free'})&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Local Storage Read I/O",
+          "name": "Local Storage iNodes (Actual vs Total)",
           "schema": "",
           "options": {
-            "label": "Bytes/sec",
+            "label": "Count",
             "order": 6,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Bytes/sec",
+              "yLabel": "Count",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -482,7 +482,7 @@
       "order": "4",
       "queriesList": [
         {
-          "query": "sum by (hostname) (system_memory_usage_bytes{ostype='linux', hostname=~'.*'})&duration=1h&step=1m",
+          "query": "sum by (hostname) (system_memory_usage_bytes{ostype=~'linux', hostname=~'.*'})&duration=1h&step=1m",
           "chart_type": "line",
           "name": "Memory Usage",
           "schema": "system_memory_usage_bytes",
