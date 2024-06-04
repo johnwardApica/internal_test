@@ -1254,14 +1254,6 @@
       "title": "Alerts",
       "order": "9",
       "type": "alerts"
-    },
-    {
-      "key": "logs",
-      "title": "Logs",
-      "order": "10",
-      "type": "logs",
-      "namespace": "Linux_5_OCI_Atom_lcl_container9",
-      "app_name": "boomi-logs"
     }
   ],
   "header": {
