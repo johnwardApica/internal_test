@@ -115,7 +115,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'.*', job='prom-metrics-collector', state='used',type='ext4',hostname=~'.*'}) /sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'.*', job='prom-metrics-collector', state=~'free|used'}))",
+          "query": "100 * 100 * 100 * 100 * 100 * (sum by (hostname) (system_filesystem_usage_bytes{job='prom-metrics-collector', state='used',type='ext4',hostname=~'.*'}) /sum by (hostname) (system_filesystem_usage_bytes{hostname=~'.*', job='prom-metrics-collector', state=~'.*'}))",
           "chart_type": "disk",
           "name": "Local Storage Space",
           "schema": "system_filesystem_usage_bytes",
@@ -147,44 +147,6 @@
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round(sum(system_filesystem_usage_bytes{ostype=~'linux|windows',type='ext4'})/(1024*1024*1024),0.01)",
-          "chart_type": "counter",
-          "name": "Shared Storage Space",
-          "schema": "system_filesystem_usage_bytes",
-          "options": {
-            "label": "GiB",
-            "order": 10,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "GiB",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "(sum by (hostname) (system_filesystem_inodes_usage{ostype=~'linux|windows',mountpoint='/',hostname=~'.*'}))",
-          "chart_type": "counter",
-          "name": "Shared Storage iNodes",
-          "schema": "system_filesystem_inodes_usage",
-          "options": {
-            "label": "Total",
-            "order": 4,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "Count",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "",
               "errorColumn": ""
             }
           },
