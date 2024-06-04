@@ -1064,44 +1064,6 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "",
-          "chart_type": "bar",
-          "name": "Container Status",
-          "schema": "",
-          "options": {
-            "label": "",
-            "order": 13,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "",
-          "chart_type": "bar",
-          "name": "Restarting",
-          "schema": "",
-          "options": {
-            "label": "Actual",
-            "order": 14,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
           "query": "sum by (hostname) (average_execution_time{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Average Execution Time",
@@ -1172,63 +1134,6 @@
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "__name__",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "",
-          "chart_type": "line",
-          "name": "Discarded Executions",
-          "schema": "",
-          "options": {
-            "label": "",
-            "order": 19,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "",
-          "chart_type": "bar",
-          "name": "Low Memory",
-          "schema": "",
-          "options": {
-            "label": "",
-            "order": 20,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "",
-          "chart_type": "bar",
-          "name": "Out of Memory",
-          "schema": "",
-          "options": {
-            "label": "Actual",
-            "order": 21,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
               "errorColumn": ""
             }
           },
@@ -1330,7 +1235,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "",
+          "query": "sum by (hostname) (threads{ostype=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Jetty Threads",
           "schema": "",
@@ -1349,7 +1254,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "",
+          "query": "sum by (hostname) (queue_size{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Jetty Queue size",
           "schema": "",
