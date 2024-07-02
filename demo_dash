@@ -257,25 +257,6 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (__name__, hostname)({__name__=~'memory_available_bytes|memory_committed_bytes',ostype=~'linux|windows',hostname=~'.*'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Machine Memory Utilisation (Actual vs Total)",
-          "schema": "system_cpu_load_average_5m",
-          "options": {
-            "label": "Actual vs Total",
-            "order": 5,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "Actual vs Total",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
           "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype=~'linux|windows', hostname=~'.*',state='free'})&duration=1h&step=1m",
           "chart_type": "line",
           "name": "Machine Memory Utilisation (%)",
@@ -427,25 +408,6 @@
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "Count",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (system_filesystem_usage_bytes{state=~'.*',ostype='linux',hostname=~'.*',device='/dev/sda1'}) or (system_filesystem_usage_bytes{state=~'free',ostype='linux',hostname=~'.*',device='/dev/sda1'})&duration=30m&step=5m",
-          "chart_type": "line",
-          "name": "Local Storage Space (Actual vs Total)",
-          "schema": "system_filesystem_usage_bytes",
-          "options": {
-            "label": "Actual vs Total",
-            "order": 5,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -1260,8 +1222,8 @@
       "title": "Logs",
       "order": "9",
       "type": "logs",
-      "namespace": "otlplogs",
-      "app_name": "boomi"
+      "namespace": "Linux_1_Atom_lcl_execution20",
+      "app_name": "boomi-log"
     }
   ],
   "header": {
