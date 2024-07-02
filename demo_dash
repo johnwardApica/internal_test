@@ -1219,11 +1219,27 @@
     },
     {
       "key": "logs",
-      "title": "Logs",
+      "title": "Execution Logs",
       "order": "9",
       "type": "logs",
       "namespace": "Linux_1_Atom_lcl_execution20",
       "app_name": "boomi-log"
+    },
+    {
+      "key": "logs",
+      "title": "Container Logs",
+      "order": "9",
+      "type": "logs",
+      "namespace": "Linux_1_Atom_lcl_container20",
+      "app_name": "boomi-log"
+    },
+    {
+      "key": "logs",
+      "title": "System Logs",
+      "order": "9",
+      "type": "logs",
+      "namespace": "syslog_demo",
+      "app_name": "syslog_demo"
     }
   ],
   "header": {
