@@ -34,7 +34,7 @@
           "options": {
             "label": "% (Avg of Avg)",
             "upperLimit": "",
-            "order": 3,
+            "order": 2,
             "zone": {
               "alert": 60,
               "danger": 80
@@ -81,7 +81,7 @@
           "schema": "system_cpu_load_average_1m",
           "options": {
             "label": "",
-            "order": 6,
+            "order": 5,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -100,7 +100,7 @@
           "schema": "system_filesystem_usage_bytes",
           "options": {
             "label": "%",
-            "order": 8,
+            "order": 6,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -119,7 +119,7 @@
           "schema": "system_filesystem_inodes_usage",
           "options": {
             "label": "Average inodes",
-            "order": 9,
+            "order": 7,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -138,7 +138,7 @@
           "schema": "open_fd_count",
           "options": {
             "label": "Average Open FD's",
-            "order": 5,
+            "order": 8,
             "descriptions": "Open FDs",
             "plot" : {
               "xLabel" : "Timestamp",
