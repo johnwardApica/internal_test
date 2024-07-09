@@ -34,7 +34,7 @@
           "options": {
             "label": "% (Avg of Avg)",
             "upperLimit": "",
-            "order": 2,
+            "order": 3,
             "zone": {
               "alert": 60,
               "danger": 80
@@ -81,7 +81,28 @@
           "schema": "system_cpu_load_average_1m",
           "options": {
             "label": "",
-            "order": 5,
+            "order": 6,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "value",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "avg(sum by (hostname) (round(jvm_uptime{ostype=~'linux|windows',hostname=~'.*'}/3600000)))",
+          "chart_type": "counter",
+          "name": "JVM Uptime",
+          "schema": "jvm_uptime",
+          "options": {
+            "label": "Hours",
+            "upperLimit": "",
+            "order": 7,
+            "description": "Average uptime across all nodes",
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -100,7 +121,7 @@
           "schema": "system_filesystem_usage_bytes",
           "options": {
             "label": "%",
-            "order": 6,
+            "order": 8,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -119,7 +140,7 @@
           "schema": "system_filesystem_inodes_usage",
           "options": {
             "label": "Average inodes",
-            "order": 7,
+            "order": 9,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -138,7 +159,7 @@
           "schema": "open_fd_count",
           "options": {
             "label": "Average Open FD's",
-            "order": 8,
+            "order": 5,
             "descriptions": "Open FDs",
             "plot" : {
               "xLabel" : "Timestamp",
@@ -717,6 +738,30 @@
         }
       ]
     },
+    {
+      "key": "jvm",
+      "title": "JVM",
+      "order": "6",
+      "queriesList": [
+        {
+          "query": "round(sum by (hostname) (jvm_uptime{hostname=~'.*'})/3600000,1)",
+          "chart_type": "Table",
+          "name": "JVM Uptime (Hours)",
+          "schema": "jvm_uptime",
+          "options": {
+            "label": "JVM Uptime in hours",
+            "order": 2,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "Hrs",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
         {
           "query": "sum by (hostname) (thread_count{hostname=~'.*',ostype=~'linux|windows'})&duration=1w&step=1h",
           "chart_type": "line",
