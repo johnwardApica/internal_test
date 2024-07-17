@@ -335,6 +335,7 @@
           "data_source_name": "Apica Monitoring"
         }
       ]
+},
     {
       "key": "storage",
       "title": "Storage",
