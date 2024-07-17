@@ -94,7 +94,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "avg(sum by (hostname) (round(jvm_uptime{ostype=~'linux|windows',hostname=~'.*'}/3600000)))",
+          "query": "avg(sum by (hostname) (round(jvm_uptime{ostype=~'linux|windows',hostname=~'.*'}/360000)))",
           "chart_type": "counter",
           "name": "JVM Uptime",
           "schema": "jvm_uptime",
@@ -333,47 +333,8 @@
             }
           },
           "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round((avg by (hostname) (irate(system_cpu_time_seconds_total{ostype=~'linux|windows',hostname=~'.*',state='wait'}[5m]))) * 100,0.01)&duration=12h&step=5m",
-          "chart_type": "line",
-          "name": "Network Bytes Sent",
-          "schema": "system_cpu_time_seconds_total",
-          "options": {
-            "label": "%",
-            "order": 8,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "seconds",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round((avg by (hostname) (irate(system_cpu_time_seconds_total{ostype=~'linux|windows',hostname=~'.*',state='wait'}[5m]))) * 100,0.01)&duration=12h&step=5m",
-          "chart_type": "line",
-          "name": "Network Bytes Received",
-          "schema": "system_cpu_time_seconds_total",
-          "options": {
-            "label": "%",
-            "order": 9,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "seconds",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
         }
       ]
-    },
     {
       "key": "storage",
       "title": "Storage",
@@ -470,6 +431,27 @@
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "round(sum(system_filesystem_usage_bytes{ostype=~'linux|windows',type='ext4'})/(1024*1024),0.01)",
+          "chart_type": "counter",
+          "name": "Shared Storage Space",
+          "schema": "system_filesystem_usage_bytes",
+          "options": {
+            "label": "GiB",
+            "order": 7,
+            "plot": {
+              "xLabel": "Timestamp",
+              "yLabel": "GiB",
+              "x": "Timestamp",
+              "y": [
+                "value"
+              ],
+              "groupBy": "",
               "errorColumn": ""
             }
           },
@@ -784,7 +766,7 @@
       "order": "6",
       "queriesList": [
         {
-          "query": "round(sum by (hostname) (jvm_uptime{hostname=~'.*'})/3600000,1)",
+          "query": "round(sum by (hostname) (jvm_uptime{hostname=~'.*'})/360000,1)",
           "chart_type": "Table",
           "name": "JVM Uptime (Hours)",
           "schema": "jvm_uptime",
