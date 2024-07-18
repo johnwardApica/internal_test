@@ -134,7 +134,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (avg_over_time(system_filesystem_inodes_usage{ostype=~'linux|windows',device=~'.*',hostname=~'.*'}[5m])))&duration=12h&step=5m",
+          "query": "(sum by (hostname) (avg_over_time(system_filesystem_inodes_usage{ostype=~'linux|windows',device=~'.*',hostname=~'.*'}[5m])))&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage iNodes",
           "schema": "system_filesystem_inodes_usage",
@@ -221,7 +221,7 @@
       "order": "2",
       "queriesList": [
         {
-          "query": "round((1-(max_over_time(system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1.000h&step=1m",
+          "query": "round((1-(max_over_time(system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "CPU Utilization (Max)",
           "schema": "system_cpu_utilization_ratio",
@@ -240,7 +240,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round((1-(avg_over_time(system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1.000h&step=1m",
+          "query": "round((1-(avg_over_time(system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "CPU Utilization (Avg)",
           "schema": "system_cpu_utilization_ratio",
@@ -259,7 +259,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(max_over_time(system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}[5m])*100,0.01)&duration=1.000h&step=1m",
+          "query": "round(max_over_time(system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}[5m])*100,0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Load Average (max)",
           "schema": "system_cpu_load_average_5m",
@@ -278,7 +278,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(avg_over_time(system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}[5m])*100,0.01)&duration=1.000h&step=1m",
+          "query": "round(avg_over_time(system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}[5m])*100,0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Load Average (avg)",
           "schema": "system_cpu_load_average_5m",
@@ -297,7 +297,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype=~'linux|windows', hostname=~'.*',state='free'})&duration=12h&step=5m",
+          "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype=~'linux|windows', hostname=~'.*',state='free'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Machine Memory Utilisation (%)",
           "schema": "system_cpu_load_average_5m",
@@ -316,7 +316,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round((avg by (hostname) (irate(system_cpu_time_seconds_total{ostype=~'linux|windows',hostname=~'.*',state='wait'}[5m]))) * 100,0.01)&duration=12h&step=5m",
+          "query": "round((avg by (hostname) (irate(system_cpu_time_seconds_total{ostype=~'linux|windows',hostname=~'.*',state='wait'}[5m]))) * 100,0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "CPU I/O Wait",
           "schema": "system_cpu_time_seconds_total",
@@ -343,7 +343,7 @@
       "order": "3",
       "queriesList": [
         {
-          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='write'}[5m])))&duration=12h&step=5m",
+          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='write'}[5m])))&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage Write I/O",
           "schema": "",
@@ -362,7 +362,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='read'}[5m])))&duration=12h&step=5m",
+          "query": "(sum by (hostname) (rate(system_disk_io_bytes_total{ostype=~'linux|windows',device=~'.*',hostname=~'.*',direction='read'}[5m])))&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage Read I/O",
           "schema": "",
@@ -381,7 +381,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'.*', job='prom-metrics-collector', state='used',type='ext4',hostname=~'.*'}) /sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'.*', job='prom-metrics-collector', state=~'.*'}))&duration=12h&step=5m",
+          "query": "100 * (sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'.*', job='prom-metrics-collector', state='used',type='ext4',hostname=~'.*'}) /sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'.*', job='prom-metrics-collector', state=~'.*'}))&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage Space Used (%)",
           "schema": "",
@@ -400,7 +400,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (sum by (hostname) (avg_over_time(system_filesystem_inodes_usage{ostype=~'linux|windows',device=~'.*',hostname=~'.*'}[5m])))&duration=12h&step=5m",
+          "query": "100 * (sum by (hostname) (avg_over_time(system_filesystem_inodes_usage{ostype=~'linux|windows',device=~'.*',hostname=~'.*'}[5m])))&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage iNodes (%)",
           "schema": "",
@@ -419,7 +419,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_filesystem_inodes_usage{state=~'.*'}) or (system_filesystem_inodes_usage{state=~'free'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (system_filesystem_inodes_usage{state=~'.*'}) or (system_filesystem_inodes_usage{state=~'free'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage iNodes (Actual vs Total)",
           "schema": "",
@@ -467,7 +467,7 @@
       "order": "4",
       "queriesList": [
         {
-          "query": "sum by (hostname) (system_memory_usage_bytes{ostype=~'linux', hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (system_memory_usage_bytes{ostype=~'linux', hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Memory Usage",
           "schema": "system_memory_usage_bytes",
@@ -505,7 +505,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype='linux', hostname=~'.*',state='free'})&duration=12h&step=5m",
+          "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype='linux', hostname=~'.*',state='free'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Memory utilization",
           "schema": "system_memory_usage_bytes",
@@ -524,7 +524,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (process_runtime_jvm_memory_usage_bytes{type='heap',ostype=~'linux',hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (process_runtime_jvm_memory_usage_bytes{type='heap',ostype=~'linux',hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "JVM Heap Usage",
           "schema": "process_runtime_jvm_memory_usage_bytes",
@@ -543,7 +543,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (process_runtime_jvm_memory_usage_bytes{type='non_heap', ostype=~'linux', hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (process_runtime_jvm_memory_usage_bytes{type='non_heap', ostype=~'linux', hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "JVM Non-Heap Usage",
           "schema": "process_runtime_jvm_memory_usage_bytes",
@@ -562,7 +562,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (memory_pool_used_g1_old_gen_heap{ostype=~'linux',hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (memory_pool_used_g1_old_gen_heap{ostype=~'linux',hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "JVM Memory Pool (G1 Old Gen)",
           "schema": "memory_pool_used_g1_old_gen_heap",
@@ -581,7 +581,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (memory_pool_used_g1_eden_space_heap{ostype=~'linux',hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (memory_pool_used_g1_eden_space_heap{ostype=~'linux',hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "JVM Memory Pool (G1 Eden Space)",
           "schema": "memory_pool_used_g1_eden_space_heap",
@@ -600,7 +600,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (memory_pool_used_g1_survivor_space_heap{ostype=~'linux',hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (memory_pool_used_g1_survivor_space_heap{ostype=~'linux',hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "JVM Memory Pool (G1 Survivor Space)",
           "schema": "memory_pool_used_g1_survivor_space_heap",
@@ -627,7 +627,7 @@
       "order": "5",
       "queriesList": [
         {
-          "query": "round(sum by (hostname) (rate(system_network_io_bytes_total{ostype=~'linux',hostname=~'.*',direction='transmit'}[5m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_io_bytes_total{ostype=~'linux',hostname=~'.*',direction='transmit'}[5m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network Tx Throughput",
           "schema": "system_network_io_bytes_total",
@@ -646,7 +646,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_io_bytes_total{ostype=~'linux',hostname=~'.*',direction='receive'}[5m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_io_bytes_total{ostype=~'linux',hostname=~'.*',direction='receive'}[5m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network Rx Throughput",
           "schema": "system_network_io_bytes_total",
@@ -665,7 +665,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_connections{ostype=~'linux',hostname=~'.*',state='ESTABLISHED'}[15m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_connections{ostype=~'linux',hostname=~'.*',state='ESTABLISHED'}[15m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network connections",
           "schema": "system_network_connections",
@@ -684,7 +684,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_dropped_total{ostype=~'linux',hostname=~'.*'}[15m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_dropped_total{ostype=~'linux',hostname=~'.*'}[15m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network Packets Dropped",
           "schema": "system_network_dropped_total",
@@ -703,7 +703,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_packets_total{ostype=~'linux',hostname=~'.*'}[15m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_packets_total{ostype=~'linux',hostname=~'.*'}[15m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network Packets Transferred",
           "schema": "system_network_packets_total",
@@ -722,7 +722,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_errors_total{ostype=~'linux',hostname=~'.*',direction='receive'}[5m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_errors_total{ostype=~'linux',hostname=~'.*',direction='receive'}[5m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network Rx error rate",
           "schema": "system_network_io_bytes_total",
@@ -741,7 +741,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_errors_total{ostype=~'linux',hostname=~'.*',direction='transmit'}[5m])),0.01)&duration=12h&step=5m",
+          "query": "round(sum by (hostname) (rate(system_network_errors_total{ostype=~'linux',hostname=~'.*',direction='transmit'}[5m])),0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Network Tx error rate",
           "schema": "system_network_io_bytes_total",
@@ -786,7 +786,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (thread_count{hostname=~'.*',ostype=~'linux|windows'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (thread_count{hostname=~'.*',ostype=~'linux|windows'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Thread Count",
           "schema": "thread_count",
@@ -806,7 +806,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (process_runtime_jvm_threads_count{daemon='true',hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (process_runtime_jvm_threads_count{daemon='true',hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Daemon Thread Count",
           "schema": "",
@@ -826,7 +826,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (process_runtime_jvm_classes_current_loaded{hostname=~'.*',ostype=~'linux|windows'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (process_runtime_jvm_classes_current_loaded{hostname=~'.*',ostype=~'linux|windows'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Loaded Classes Count",
           "schema": "process_runtime_jvm_classes_current_loaded",
@@ -845,7 +845,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (open_fd_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (open_fd_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Open File Descriptor Count",
           "schema": "open_fd_count",
@@ -865,7 +865,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (heap_memory_usage_used{hostname=~'.*',ostype=~'linux|windows'})/(heap_memory_usage_max{hostname=~'.*',ostype=~'linux|windows'})&duration=12h&step=5m",
+          "query": "100 * (heap_memory_usage_used{hostname=~'.*',ostype=~'linux|windows'})/(heap_memory_usage_max{hostname=~'.*',ostype=~'linux|windows'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Heap memory usage %",
           "schema": "heap_memory_usage_used/heap_memory_usage_max",
@@ -884,7 +884,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(100*increase(process_runtime_jvm_gc_duration_seconds_sum{ostype=~'linux',hostname=~'.*'} [5m])/300,0.01)&duration=12h&step=5m",
+          "query": "round(100*increase(process_runtime_jvm_gc_duration_seconds_sum{ostype=~'linux',hostname=~'.*'} [5m])/300,0.01)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "JVM garbage collection time %",
           "schema": "process_runtime_jvm_gc_duration_seconds_count",
@@ -948,7 +948,7 @@
       "order": "7",
       "queriesList": [
         {
-          "query": "sum by (hostname) (job_scheduler_store_percent_usage{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (job_scheduler_store_percent_usage{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Job Scheduler Store",
           "schema": "job_scheduler_store_percent_usage",
@@ -967,7 +967,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (memory_percent_usage{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (memory_percent_usage{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Memory Usage",
           "schema": "memory_percent_usage",
@@ -986,7 +986,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (store_percent_usage{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (store_percent_usage{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Data Store Usage",
           "schema": "store_percent_usage",
@@ -1005,7 +1005,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (temp_percent_usage{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (temp_percent_usage{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Tmp Data Store Usage",
           "schema": "temp_percent_usage",
@@ -1024,7 +1024,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (average_execution_time{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (average_execution_time{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Average Execution Time",
           "schema": "average_execution_time",
@@ -1043,7 +1043,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (average_execution_queue_time{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (average_execution_queue_time{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Average Execution Queue Time",
           "schema": "average_execution_queue_time",
@@ -1062,7 +1062,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(queued_execution_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "(queued_execution_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Queued Executions",
           "schema": "queued_execution_count",
@@ -1081,7 +1081,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(running_execution_Count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "(running_execution_Count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Running Executions",
           "schema": "running_execution_Count",
@@ -1100,7 +1100,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (pending_async_message_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (pending_async_message_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Pending Async Messages",
           "schema": "pending_async_message_count",
@@ -1119,7 +1119,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (pending_sync_message_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (pending_sync_message_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Pending Sync Messages",
           "schema": "pending_sync_message_count",
@@ -1138,7 +1138,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (connect_failure_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (connect_failure_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Platform Connection Failure",
           "schema": "connect_failure_count",
@@ -1157,7 +1157,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (delivered_message_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (delivered_message_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Platform Message Count",
           "schema": "delivered_message_count",
@@ -1176,7 +1176,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (running_browsers_count{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (running_browsers_count{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Running Browser Count",
           "schema": "running_browsers_count",
@@ -1195,7 +1195,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (threads{ostype=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (threads{ostype=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Jetty Threads",
           "schema": "",
@@ -1214,7 +1214,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (queue_size{hostname=~'.*'})&duration=12h&step=5m",
+          "query": "sum by (hostname) (queue_size{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Jetty Queue size",
           "schema": "",
