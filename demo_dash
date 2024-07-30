@@ -115,7 +115,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state='used',type='ext4',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}) /sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state=~'free|used'}))",
+          "query": "100 * (sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state='used',type='ext4',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}) /sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state=~'free|used',type='ext4'}))",
           "chart_type": "disk",
           "name": "Local Storage Space",
           "schema": "system_filesystem_usage_bytes",
@@ -381,7 +381,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state='used',type='ext4',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}) /sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state=~'.*'}))&duration=1h&step=5m",
+          "query": "100 * (sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state='used',type='ext4',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}) /sum by (hostname) (system_filesystem_usage_bytes{ostype=~'linux',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state=~'.*',type='ext4'}))&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Local Storage Space Used (%)",
           "schema": "",
