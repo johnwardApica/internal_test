@@ -419,25 +419,6 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_filesystem_inodes_usage{state=~'.*'}) or (system_filesystem_inodes_usage{state=~'free'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Local Storage iNodes (Actual vs Total)",
-          "schema": "",
-          "options": {
-            "label": "Count",
-            "order": 6,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "Count",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
           "query": "round(sum(system_filesystem_usage_bytes{ostype=~'linux|windows',type='ext4'})/(1024*1024),0.01)",
           "chart_type": "counter",
           "name": "Shared Storage Space",
