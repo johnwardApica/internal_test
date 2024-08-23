@@ -138,7 +138,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (system_file_data_operations_sec{hostname=~'.*'})&duration=1h&step=5m",
+          "query": "sum by (hostname) (system_file_data_operations_sec{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "File Data Operations",
           "schema": "system_file_data_operations_sec",
