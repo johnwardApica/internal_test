@@ -609,8 +609,8 @@
       ]
     },
     {
-      "key": "memory",
-      "title": "Memory",
+      "key": "disk",
+      "title": "Disk",
       "type": "metrics",
       "order": "4",
       "queriesList": [
