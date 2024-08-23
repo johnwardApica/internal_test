@@ -570,7 +570,7 @@
     "dateTimeRange": true,
     "dropdowns": [
       {
-        "Host": {
+        "hostname": {
           "query": "sum by (hostname) (target_info{ostype=~'linux|windows'})",
           "name": "Host Selection",
           "data_source_name": "Apica Monitoring"
