@@ -9,12 +9,12 @@
         {
           "query": "sum by (hostname) (target_info{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2'})",
           "chart_type": "Table",
-          "name": "Atom Status",
+          "name": "Host Status",
           "schema": "target_info",
           "options": {
             "label": "Actual",
             "order": 1,
-            "description": "Atom Status",
+            "description": "Host Status",
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "value",
@@ -93,25 +93,6 @@
           },
           "data_source_name": "Apica Monitoring"
         },
-        {
-          "query": "avg(sum by (hostname) (round(jvm_uptime{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}/360000)))",
-          "chart_type": "counter",
-          "name": "JVM Uptime",
-          "schema": "jvm_uptime",
-          "options": {
-            "label": "Hours",
-            "upperLimit": "",
-            "order": 7,
-            "description": "Average uptime across all nodes",
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "",
-              "errorColumn": ""
-            }
-          },
           "data_source_name": "Apica Monitoring"
         },
         {
@@ -152,44 +133,6 @@
           },
           "data_source_name": "Apica Monitoring"
         },
-        {
-          "query": "(sum by (hostname) (system_filesystem_inodes_usage{ostype=~'linux|windows',mountpoint='/',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}))",
-          "chart_type": "counter",
-          "name": "Shared Storage INodes",
-          "schema": "system_filesystem_inodes_usage",
-          "options": {
-            "label": "Total",
-            "order": 10,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "Count",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round(sum(system_filesystem_usage_bytes{ostype=~'linux|windows',type='ext4'})/(1024*1024),0.01)",
-          "chart_type": "counter",
-          "name": "Shared Storage Space",
-          "schema": "system_filesystem_usage_bytes",
-          "options": {
-            "label": "GiB",
-            "order": 11,
-            "plot": {
-              "xLabel": "Timestamp",
-              "yLabel": "GiB",
-              "x": "Timestamp",
-              "y": [
-                "value"
-              ],
-              "groupBy": "",
-              "errorColumn": ""
-            }
-          },
           "data_source_name": "Apica Monitoring"
         },
         {
@@ -413,27 +356,6 @@
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round(sum(system_filesystem_usage_bytes{ostype=~'linux|windows',type='ext4'})/(1024*1024),0.01)",
-          "chart_type": "counter",
-          "name": "Shared Storage Space",
-          "schema": "system_filesystem_usage_bytes",
-          "options": {
-            "label": "GiB",
-            "order": 7,
-            "plot": {
-              "xLabel": "Timestamp",
-              "yLabel": "GiB",
-              "x": "Timestamp",
-              "y": [
-                "value"
-              ],
-              "groupBy": "",
               "errorColumn": ""
             }
           },
@@ -922,330 +844,18 @@
           "data_source_name": "Apica Monitoring"
         }
       ]
-    },
-    {
-      "key": "atom",
-      "title": "Atom",
-      "order": "7",
-      "queriesList": [
-        {
-          "query": "sum by (hostname) (job_scheduler_store_percent_usage{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Job Scheduler Store",
-          "schema": "job_scheduler_store_percent_usage",
-          "options": {
-            "label": "%",
-            "order": 1,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "%",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (memory_percent_usage{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Memory Usage",
-          "schema": "memory_percent_usage",
-          "options": {
-            "label": "%",
-            "order": 2,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (store_percent_usage{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Data Store Usage",
-          "schema": "store_percent_usage",
-          "options": {
-            "label": "%",
-            "order": 3,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "%",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (temp_percent_usage{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Tmp Data Store Usage",
-          "schema": "temp_percent_usage",
-          "options": {
-            "label": "%",
-            "order": 4,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "%",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (average_execution_time{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Average Execution Time",
-          "schema": "average_execution_time",
-          "options": {
-            "label": "Actual",
-            "order": 15,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (average_execution_queue_time{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Average Execution Queue Time",
-          "schema": "average_execution_queue_time",
-          "options": {
-            "label": "Actual",
-            "order": 16,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "(queued_execution_count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Queued Executions",
-          "schema": "queued_execution_count",
-          "options": {
-            "label": "Actual vs Max",
-            "order": 17,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "(running_execution_Count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Running Executions",
-          "schema": "running_execution_Count",
-          "options": {
-            "label": "Actual vs Max",
-            "order": 18,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (pending_async_message_count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Pending Async Messages",
-          "schema": "pending_async_message_count",
-          "options": {
-            "label": "Actual",
-            "order": 22,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (pending_sync_message_count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Pending Sync Messages",
-          "schema": "pending_sync_message_count",
-          "options": {
-            "label": "Actual",
-            "order": 23,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (connect_failure_count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Platform Connection Failure",
-          "schema": "connect_failure_count",
-          "options": {
-            "label": "Actual",
-            "order": 24,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (delivered_message_count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Platform Message Count",
-          "schema": "delivered_message_count",
-          "options": {
-            "label": "Actual",
-            "order": 25,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (running_browsers_count{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Running Browser Count",
-          "schema": "running_browsers_count",
-          "options": {
-            "label": "Actual",
-            "order": 26,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (threads{ostype=~'.*'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Jetty Threads",
-          "schema": "",
-          "options": {
-            "label": "Actual vs Max",
-            "order": 27,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "sum by (hostname) (queue_size{hostname=~'demo-boomi-linux1|demo-boomi-linux2'})&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Jetty Queue size",
-          "schema": "",
-          "options": {
-            "label": "Actual",
-            "order": 28,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        }
-      ]
-    },
-    {
-      "key": "alerts",
-      "title": "Alerts",
-      "order": "8",
-      "type": "alerts"
-    },
-    {
-      "key": "logs",
-      "title": "Logs",
-      "order": "9",
-      "type": "logs",
-      "namespace": "otlplogs",
-      "app_name": "boomi"
     }
   ],
   "header": {
     "dateTimeRange": true,
     "dropdowns": [
       {
-        "atom": {
-          "query": "sum by (hostname) (target_info{ostype=~'linux|windows',runtime=~'.*'})",
-          "name": "Atom Selection",
+        "Host": {
+          "query": "sum by (hostname) (target_info{ostype=~'linux|windows'})",
+          "name": "Host Selection",
           "data_source_name": "Apica Monitoring"
         }
-      },
-     {
-       "runtime": {
-         "query": "sum by (runtime) (target_info{ostype=~'linux|windows'})",
-         "name": "Runtime selection",
-         "data_source_name": "Apica Monitoring"
-       }
+      }
      }
     ]
   }
