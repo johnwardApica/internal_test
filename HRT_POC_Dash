@@ -174,6 +174,25 @@
             }
           },
           "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "sum by (hostname) (system_registry_quota_in_use_percent{hostname=~'.*'})&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Percent Registry Quota In Use",
+          "schema": "system_registry_quota_in_use_percent",
+          "options": {
+            "label": "%",
+            "order": 9,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
         }
       ]
     },
