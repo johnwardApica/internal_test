@@ -1,13 +1,13 @@
 {
   "tabs": [
     {
-      "key": "overview",
-      "title": "Overview",
+      "key": "system",
+      "title": "System",
       "order": "1",
       "type": "metrics",
       "queriesList": [
         {
-          "query": "sum by (hostname) (target_info{ostype=~'linux|windows',hostname=~'.*'})",
+          "query": "sum by (hostname) (system_up_time{ostype=~'linux|windows',hostname=~'.*'}) / 3600",
           "chart_type": "Table",
           "name": "Host Status",
           "schema": "target_info",
@@ -27,83 +27,127 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(avg(sum by (hostname) (round(100 - system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}*100, 0.1))), 0.01)",
-          "chart_type": "gauge",
-          "name": "CPU Utilization",
-          "schema": "system_cpu_utilization_ratio",
+          "query": "sum by (hostname) (objects_processes{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "Processes",
+          "schema": "objects_processes",
           "options": {
-            "label": "% (Avg of Avg)",
-            "upperLimit": "",
-            "order": 3,
-            "zone": {
-              "alert": 60,
-              "danger": 80
-            },
-            "description": "CPU Utilization",
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "value",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round(avg(sum by (hostname) (round(system_memory_utilization_ratio{ostype=~'linux|windows',state=~'used',hostname=~'.*'}*100, 0.1))), 0.01)",
-          "chart_type": "gauge",
-          "name": "Machine Memory Utilization",
-          "schema": "system_memory_utilization_ratio",
-          "options": {
-            "label": "% (Avg of Avg)",
-            "zone": {
-              "alert": 60,
-              "danger": 80
-            },
             "order": 2,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "value",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "",
+              "groupBy": "hostname",
               "errorColumn": ""
             }
           },
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(avg by (hostname) (system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}), 0.01)*100",
-          "chart_type": "counter",
-          "name": "Load Average",
-          "schema": "system_cpu_load_average_1m",
+          "query": "sum by (hostname) (objects_threads{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "Threads",
+          "schema": "objects_threads",
           "options": {
-            "label": "",
+            "order": 3,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "sum by (hostname) (system_processor_queue_length{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "Processor Queue Length",
+          "schema": "system_processor_queue_length",
+          "options": {
+            "order": 4,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "sum by (hostname) (system_system_calls_sec{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "System Calls",
+          "schema": "system_processor_queue_length",
+          "options": {
+            "label": "/sec",
+            "order": 5,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "sum by (hostname) (system_context_switches_sec{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "Context Switches",
+          "schema": "system_context_switches_sec",
+          "options": {
+            "label": "/sec",
             "order": 6,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "value",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "",
+              "groupBy": "hostname",
               "errorColumn": ""
             }
           },
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100 * (sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'.*', job='prom-metrics-collector', state='used',type='ext4',hostname=~'.*'}) /sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'.*', job='prom-metrics-collector', state=~'free|used',type='ext4'}))",
-          "chart_type": "disk",
-          "name": "Local Storage Space",
-          "schema": "system_filesystem_usage_bytes",
+          "query": "sum by (hostname) (system_file_control_operations_sec{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "File Control Operations",
+          "schema": "system_file_control_operations_sec",
           "options": {
-            "label": "%",
+            "label": "/sec",
+            "order": 7,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "(sum by (hostname) (system_file_data_operations_sec{hostname=~'.*'})",
+          "chart_type": "line",
+          "name": "File Data Operations",
+          "schema": "system_file_data_operations_sec",
+          "options": {
+            "label": "/sec",
             "order": 8,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "value",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -113,39 +157,19 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (avg_over_time(system_filesystem_inodes_usage{ostype=~'linux|windows',device=~'.*',hostname=~'.*'}[5m])))&duration=1h&step=5m",
+          "query": "sum by (hostname) (system_registry_quota_in_use_percent{hostname=~'.*'})",
           "chart_type": "line",
-          "name": "Local Storage iNodes",
-          "schema": "system_filesystem_inodes_usage",
+          "name": "Percent Registry Quota In Use",
+          "schema": "system_registry_quota_in_use_percent",
           "options": {
-            "label": "Average inodes",
+            "label": "%",
             "order": 9,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "value",
+              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round(avg(sum by (hostname) (open_fd_count{ostype=~'linux|windows'})),1)",
-          "chart_type": "counter",
-          "name": "Open File Descriptors",
-          "schema": "open_fd_count",
-          "options": {
-            "label": "Average Open FD's",
-            "order": 5,
-            "descriptions": "Open FDs",
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "File Descriptors",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "",
               "errorColumn": ""
             }
           },
