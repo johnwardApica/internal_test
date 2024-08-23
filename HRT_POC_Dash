@@ -27,7 +27,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (objects_processes{hostname=~'.*'})",
+          "query": "sum by (hostname) (objects_processes{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Processes",
           "schema": "objects_processes",
@@ -45,7 +45,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (objects_threads{hostname=~'.*'})",
+          "query": "sum by (hostname) (objects_threads{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Threads",
           "schema": "objects_threads",
@@ -63,7 +63,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_processor_queue_length{hostname=~'.*'})",
+          "query": "sum by (hostname) (system_processor_queue_length{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Processor Queue Length",
           "schema": "system_processor_queue_length",
@@ -81,7 +81,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_system_calls_sec{hostname=~'.*'})",
+          "query": "sum by (hostname) (system_system_calls_sec{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "System Calls",
           "schema": "system_processor_queue_length",
@@ -100,7 +100,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_context_switches_sec{hostname=~'.*'})",
+          "query": "sum by (hostname) (system_context_switches_sec{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Context Switches",
           "schema": "system_context_switches_sec",
@@ -119,7 +119,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_file_control_operations_sec{hostname=~'.*'})",
+          "query": "sum by (hostname) (system_file_control_operations_sec{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "File Control Operations",
           "schema": "system_file_control_operations_sec",
@@ -138,7 +138,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "(sum by (hostname) (system_file_data_operations_sec{hostname=~'.*'})",
+          "query": "(sum by (hostname) (system_file_data_operations_sec{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "File Data Operations",
           "schema": "system_file_data_operations_sec",
@@ -157,7 +157,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_registry_quota_in_use_percent{hostname=~'.*'})",
+          "query": "sum by (hostname) (system_registry_quota_in_use_percent{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Percent Registry Quota In Use",
           "schema": "system_registry_quota_in_use_percent",
