@@ -176,16 +176,52 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (system_registry_quota_in_use_percent{hostname=~'.*'})&duration=1h&step=5m",
+          "query": "round((1-(avg_over_time(system_cpu_utilization_ratio{state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Percent Registry Quota In Use",
-          "schema": "system_registry_quota_in_use_percent",
+          "name": "CPU Util %",
+          "schema": "system_cpu_utilization_ratio",
           "options": {
             "label": "%",
-            "order": 9,
+            "order": 10,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "round((sum by (hostname) (memory_available_bytes{hostname=~'.*'}))/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Available Memory",
+          "schema": "memory_available_bytes",
+          "options": {
+            "order": 11,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "GB",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "round(sum by (hostname) (network_interface_bytes_total_sec{hostname=~'.*'}),0.01)&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Total Network Traffic",
+          "schema": "network_interface_bytes_total_sec",
+          "options": {
+            "order": 11,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "Bytes/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
