@@ -7,30 +7,28 @@
       "type": "metrics",
       "queriesList": [
         {
-          "query": "sum by (hostname) (system_up_time{ostype=~'linux|windows',hostname=~'.*'}) / 3600",
-          "chart_type": "Table",
-          "name": "Host Status",
-          "schema": "target_info",
+          "query": "sum by (hostname) (logicaldisk_free_megabytes{hostname=~'.*'})/1000&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Logical Disk Total Free Space",
+          "schema": "logicaldisk_free_megabytes",
           "options": {
-            "label": "Actual",
             "order": 1,
-            "description": "Host Status",
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "value",
+              "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "",
+              "groupBy": "hostname",
               "errorColumn": ""
             }
           },
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "sum by (hostname) (objects_processes{hostname=~'.*'})&duration=1h&step=5m",
+          "query": "sum by (hostname) (logicaldisk_current_disk_queue_length{hostname=~'.*'})&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Processes",
-          "schema": "objects_processes",
+          "name": "Current Logical Disk Queue Length",
+          "schema": "logicaldisk_current_disk_queue_length",
           "options": {
             "order": 2,
             "plot" : {
