@@ -131,8 +131,6 @@
           },
           "data_source_name": "Apica Monitoring"
         },
-          "data_source_name": "Apica Monitoring"
-        },
         {
           "query": "round(avg(sum by (hostname) (open_fd_count{ostype=~'linux|windows'})),1)",
           "chart_type": "counter",
@@ -854,7 +852,6 @@
           "data_source_name": "Apica Monitoring"
         }
       }
-     }
     ]
   }
 }
