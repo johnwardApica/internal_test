@@ -514,26 +514,7 @@
         {
           "query": "round(sum by (hostname) (memory_pool_nonpaged_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Pool Paged Bytes",
-          "schema": "",
-          "options": {
-            "label": "GB",
-            "order": 9,
-            "plot" : {
-              "xLabel" : "Timestamp",
-              "yLabel": "GB",
-              "x" : "Timestamp",
-              "y": ["value"],
-              "groupBy": "hostname",
-              "errorColumn": ""
-            }
-          },
-          "data_source_name": "Apica Monitoring"
-        },
-        {
-          "query": "round(sum by (hostname) (memory_pool_nonpaged_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
-          "chart_type": "line",
-          "name": "Pool Paged Bytes",
+          "name": "Pool Non-Paged Bytes",
           "schema": "",
           "options": {
             "label": "GB",
@@ -552,7 +533,7 @@
         {
           "query": "round(sum by (hostname) (memory_standby_cache_core_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Pool Paged Bytes",
+          "name": "Standby Cache Core Bytes",
           "schema": "",
           "options": {
             "label": "GB",
@@ -571,7 +552,7 @@
         {
           "query": "round(sum by (hostname) (memory_standby_cache_normal_priority_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Pool Paged Bytes",
+          "name": "Standby Cache Normal Priority Bytes",
           "schema": "",
           "options": {
             "label": "GB",
@@ -590,7 +571,7 @@
         {
           "query": "round(sum by (hostname) (memory_standby_cache_reserve_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Pool Paged Bytes",
+          "name": "Standby Cache Reserve Bytes",
           "schema": "",
           "options": {
             "label": "GB",
