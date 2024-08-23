@@ -86,11 +86,11 @@
           "name": "System Calls",
           "schema": "system_processor_queue_length",
           "options": {
-            "label": "/sec",
+            "label": "calls/sec",
             "order": 5,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "",
+              "yLabel": "calls/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -105,11 +105,11 @@
           "name": "Context Switches",
           "schema": "system_context_switches_sec",
           "options": {
-            "label": "/sec",
+            "label": "switches/sec",
             "order": 6,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "",
+              "yLabel": "switches/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -124,11 +124,11 @@
           "name": "File Control Operations",
           "schema": "system_file_control_operations_sec",
           "options": {
-            "label": "/sec",
+            "label": "operations/sec",
             "order": 7,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "",
+              "yLabel": "operations/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -143,11 +143,11 @@
           "name": "File Data Operations",
           "schema": "system_file_data_operations_sec",
           "options": {
-            "label": "/sec",
+            "label": "operations/sec",
             "order": 8,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "",
+              "yLabel": "operations/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
