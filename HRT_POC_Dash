@@ -93,8 +93,6 @@
           },
           "data_source_name": "Apica Monitoring"
         },
-          "data_source_name": "Apica Monitoring"
-        },
         {
           "query": "100 * (sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state='used',type='ext4',hostname=~'demo-boomi-linux1|demo-boomi-linux2'}) /sum by (device) (system_filesystem_usage_bytes{ostype=~'linux|windows',hostname=~'demo-boomi-linux1|demo-boomi-linux2', job='prom-metrics-collector', state=~'free|used',type='ext4'}))",
           "chart_type": "disk",
