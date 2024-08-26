@@ -18,7 +18,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -36,7 +36,7 @@
               "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -54,7 +54,7 @@
               "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -72,7 +72,7 @@
               "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -91,7 +91,7 @@
               "yLabel": "calls/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -110,7 +110,7 @@
               "yLabel": "switches/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -129,7 +129,7 @@
               "yLabel": "operations/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -148,7 +148,7 @@
               "yLabel": "operations/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -167,7 +167,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -204,7 +204,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -222,7 +222,7 @@
               "yLabel": "Bytes/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -249,7 +249,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -268,7 +268,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -287,7 +287,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -306,7 +306,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -325,7 +325,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -344,7 +344,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -370,7 +370,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -389,7 +389,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -408,7 +408,7 @@
               "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -427,7 +427,7 @@
               "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -446,7 +446,7 @@
               "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -465,7 +465,7 @@
               "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -484,7 +484,7 @@
               "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -503,7 +503,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -522,7 +522,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -541,7 +541,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -560,7 +560,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -579,7 +579,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -606,7 +606,7 @@
               "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -625,7 +625,7 @@
               "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -644,7 +644,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -663,7 +663,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -682,7 +682,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -701,7 +701,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -720,7 +720,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -739,7 +739,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -758,7 +758,7 @@
               "yLabel": "reads/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -777,7 +777,7 @@
               "yLabel": "writes/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -796,7 +796,7 @@
               "yLabel": "kB/s",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -815,7 +815,7 @@
               "yLabel": "kB/s",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname;exported_instance",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -842,7 +842,7 @@
               "yLabel": "Bytes/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -861,7 +861,7 @@
               "yLabel": "Bytes/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -880,7 +880,7 @@
               "yLabel": "Connections/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -899,7 +899,7 @@
               "yLabel": "Packets/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -918,7 +918,7 @@
               "yLabel": "Packets/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -937,7 +937,7 @@
               "yLabel": "Errors/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -956,7 +956,7 @@
               "yLabel": "Errors/sec",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname","exported_instance",
               "errorColumn": ""
             }
           },
@@ -969,7 +969,7 @@
     "dateTimeRange": true,
     "dropdowns": [
       {
-        "hostname": {
+        "hostname","exported_instance": {
           "query": "sum by (hostname) (target_info{ostype=~'linux|windows'})",
           "name": "Host Selection",
           "data_source_name": "Apica Monitoring"
