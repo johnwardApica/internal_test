@@ -231,7 +231,7 @@
       ]
     },
     {
-      "key": "cpu",
+      "key": "CPU",
       "title": "CPU",
       "type": "metrics",
       "order": "2",
@@ -594,57 +594,228 @@
       "order": "4",
       "queriesList": [
         {
-          "query": "sum by (hostname) (system_memory_usage_bytes{ostype=~'linux', hostname=~'.*'})&duration=1h&step=5m",
+          "query": "logicaldisk_free_megabytes{hostname=~'.*'} / 1024&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Memory Usage",
-          "schema": "system_memory_usage_bytes",
+          "name": "Logical Disk Total Free Space",
+          "schema": "logicaldisk_free_megabytes",
           "options": {
-            "label": "GiB",
+            "label": "GB",
             "order": 1,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "GiB",
+              "yLabel": "GB",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname,exported_instance",
               "errorColumn": ""
             }
           },
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round((sum by (hostname) (system_linux_memory_available_bytes{ostype='linux', hostname=~'.*'}))/(1024*1024*1024),0.01)",
-          "chart_type": "table",
-          "name": "Memory available (GiB)",
-          "schema": "system_linux_memory_available_bytes",
+          "query": "logicaldisk_current_disk_queue_length{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Current Logical Disk Queue Length",
+          "schema": "logicaldisk_free_megabytes",
           "options": {
-            "label": "GiB",
+            "label": "GB",
             "order": 2,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "%",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname,exported_instance",
               "errorColumn": ""
             }
           },
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype='linux', hostname=~'.*',state='free'})&duration=1h&step=5m",
+          "query": "logicaldisk_percent_disk_time{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Memory utilization",
-          "schema": "system_memory_usage_bytes",
+          "name": "Logical Disk Percent Disk Time",
+          "schema": "logicaldisk_percent_disk_time",
           "options": {
-            "label": "%",
+            "label": "",
             "order": 3,
             "plot" : {
               "xLabel" : "Timestamp",
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "logicaldisk_percent_idle_time{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Logical Disk Percent Idle Time",
+          "schema": "logicaldisk_percent_idle_time",
+          "options": {
+            "label": "",
+            "order": 3,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "logicaldisk_percent_disk_read_time{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Logical Disk Percent Read Time",
+          "schema": "logicaldisk_percent_disk_read_time",
+          "options": {
+            "label": "",
+            "order": 4,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "logicaldisk_percent_disk_write_time{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Logical Disk Percent Write Time",
+          "schema": "logicaldisk_percent_disk_write_time",
+          "options": {
+            "label": "",
+            "order": 5,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "physicaldisk_percent_disk_read_time{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Physical Disk Percent Read Time",
+          "schema": "physicaldisk_percent_disk_read_time",
+          "options": {
+            "label": "",
+            "order": 6,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "physicaldisk_percent_disk_write_time{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Physical Disk Percent Write Time",
+          "schema": "physicaldisk_percent_disk_write_time",
+          "options": {
+            "label": "",
+            "order": 7,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "%",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "physicaldisk_disk_reads_sec{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Physical Disk Reads",
+          "schema": "physicaldisk_disk_reads_sec",
+          "options": {
+            "label": "",
+            "order": 8,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "reads/sec",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "physicaldisk_disk_writes_sec{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Physical Disk Writes",
+          "schema": "physicaldisk_disk_writes_sec",
+          "options": {
+            "label": "",
+            "order": 9,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "writes/sec",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "physicaldisk_disk_read_bytes_sec{hostname=~'.*'}/1024&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Physical Disk Bytes Read",
+          "schema": "physicaldisk_disk_read_bytes_sec",
+          "options": {
+            "label": "",
+            "order": 10,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "kB/s",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "physicaldisk_disk_write_bytes_sec{hostname=~'.*'}/1024&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Physical Disk Bytes Written",
+          "schema": "physicaldisk_disk_write_bytes_sec",
+          "options": {
+            "label": "",
+            "order": 11,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "kB/s",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname,exported_instance",
               "errorColumn": ""
             }
           },
