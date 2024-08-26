@@ -359,7 +359,7 @@
       "order": "3",
       "queriesList": [
         {
-          "query": "round((sum by (hostname) (memory_available_bytes{hostname=~'.*'}))/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_available_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Available Memory",
           "schema": "memory_available_bytes",
@@ -377,7 +377,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round((sum by (hostname) (memory_committed_bytes{hostname=~'.*'}))/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_committed_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Committed Memory",
           "schema": "",
@@ -396,7 +396,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_cache_faults_sec{hostname=~'.*'}),0.01)&duration=1h&step=5m",
+          "query": "memory_cache_faults_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Cache Faults",
           "schema": "",
@@ -415,7 +415,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_demand_zero_faults_sec{hostname=~'.*'}),0.01)&duration=1h&step=5m",
+          "query": "memory_demand_zero_faults_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Demand Zero Faults",
           "schema": "",
@@ -434,7 +434,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_pages_sec{hostname=~'.*'}),0.01)&duration=1h&step=5m",
+          "query": "memory_pages_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Pages",
           "schema": "",
@@ -453,7 +453,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_page_faults_sec{hostname=~'.*'}),0.01)&duration=1h&step=5m",
+          "query": "memory_page_faults_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Page Faults",
           "schema": "",
@@ -472,7 +472,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_transition_faults_sec{hostname=~'.*'}),0.01)&duration=1h&step=5m",
+          "query": "memory_transition_faults_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Transition Faults",
           "schema": "",
@@ -491,7 +491,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_pool_paged_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_pool_paged_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Pool Paged Bytes",
           "schema": "",
@@ -510,7 +510,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_pool_nonpaged_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_pool_nonpaged_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Pool Non-Paged Bytes",
           "schema": "",
@@ -529,7 +529,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_standby_cache_core_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_standby_cache_core_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Standby Cache Core Bytes",
           "schema": "",
@@ -548,7 +548,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_standby_cache_normal_priority_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_standby_cache_normal_priority_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Standby Cache Normal Priority Bytes",
           "schema": "",
@@ -567,7 +567,7 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (memory_standby_cache_reserve_bytes{hostname=~'.*'})/(1024*1024*1024),0.01)&duration=1h&step=5m",
+          "query": "memory_standby_cache_reserve_bytes{hostname=~'.*'}/(1024*1024*1024)&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Standby Cache Reserve Bytes",
           "schema": "",
