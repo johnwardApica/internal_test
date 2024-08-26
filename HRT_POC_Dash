@@ -186,7 +186,7 @@
               "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
-              "groupBy": "hostname",
+              "groupBy": "hostname,cpu",
               "errorColumn": ""
             }
           },
