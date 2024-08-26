@@ -237,10 +237,10 @@
       "order": "2",
       "queriesList": [
         {
-          "query": "round((1-(max_over_time(system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1h&step=5m",
+          "query": "processor_time{hostname=~'.*', exported_instance='0,_Total'} / (processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} - (-processor_idle_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_user_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_time{hostname=~'.*', exported_instance='0,_Total'})) * 100&duration=1h&step=5m",
           "chart_type": "line",
           "name": "Percent Processor Time",
-          "schema": "system_cpu_utilization_ratio",
+          "schema": "processor_time",
           "options": {
             "label": "%",
             "order": 1,
@@ -256,10 +256,10 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round((1-(avg_over_time(system_cpu_utilization_ratio{ostype=~'linux|windows',state=~'idle',hostname=~'.*'}[5m])))*100,0.01)&duration=1h&step=5m",
+          "query": "processor_idle_time{hostname=~'.*', exported_instance='0,_Total'} / (processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} - (-processor_idle_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_user_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_time{hostname=~'.*', exported_instance='0,_Total'})) * 100&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "CPU Utilization (Avg)",
-          "schema": "system_cpu_utilization_ratio",
+          "name": "Percent Idle Time",
+          "schema": "processor_idle_time",
           "options": {
             "label": "%",
             "order": 2,
@@ -275,16 +275,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(max_over_time(system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}[5m])*100,0.01)&duration=1h&step=5m",
+          "query": "processor_user_time{hostname=~'.*', exported_instance='0,_Total'} / (processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} - (-processor_idle_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_user_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_time{hostname=~'.*', exported_instance='0,_Total'})) * 100&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Load Average (max)",
-          "schema": "system_cpu_load_average_5m",
+          "name": "Percent User Time",
+          "schema": "processor_user_time",
           "options": {
             "label": "Actual",
             "order": 3,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "avg # of runnable processes",
+              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -294,16 +294,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(avg_over_time(system_cpu_load_average_5m{ostype=~'linux|windows',hostname=~'.*'}[5m])*100,0.01)&duration=1h&step=5m",
+          "query": "processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'} / (processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} - (-processor_idle_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_user_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_time{hostname=~'.*', exported_instance='0,_Total'})) * 100&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Load Average (avg)",
-          "schema": "system_cpu_load_average_5m",
+          "name": "Percent Privileged Time",
+          "schema": "processor_privileged_time",
           "options": {
             "label": "Actual",
             "order": 4,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "avg # of runnable processes",
+              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -313,10 +313,10 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "100*sum by (hostname) (1-system_memory_utilization_ratio{ostype=~'linux|windows', hostname=~'.*',state='free'})&duration=1h&step=5m",
+          "query": "processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'} / (processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} - (-processor_idle_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_user_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_time{hostname=~'.*', exported_instance='0,_Total'})) * 100&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Machine Memory Utilisation (%)",
-          "schema": "system_cpu_load_average_5m",
+          "name": "Percent Interrupt Time",
+          "schema": "processor_interrupt_time",
           "options": {
             "label": "%",
             "order": 5,
@@ -332,16 +332,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round((avg by (hostname) (irate(system_cpu_time_seconds_total{ostype=~'linux|windows',hostname=~'.*',state='wait'}[5m]))) * 100,0.01)&duration=1h&step=5m",
+          "query": "processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} / (processor_dpc_time{hostname=~'.*', exported_instance='0,_Total'} - (-processor_idle_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_interrupt_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_privileged_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_user_time{hostname=~'.*', exported_instance='0,_Total'}) - (-processor_time{hostname=~'.*', exported_instance='0,_Total'})) * 100&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "CPU I/O Wait",
-          "schema": "system_cpu_time_seconds_total",
+          "name": "Percent DPC Time",
+          "schema": "processor_dpc_time",
           "options": {
             "label": "%",
             "order": 6,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "seconds",
+              "yLabel": "%",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
