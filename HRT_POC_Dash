@@ -830,16 +830,16 @@
       "order": "5",
       "queriesList": [
         {
-          "query": "round(sum by (hostname) (rate(system_network_io_bytes_total{ostype=~'linux',hostname=~'.*',direction='transmit'}[5m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_bytes_sent_sec{hostname=~'.*'}/ 1024&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network Tx Throughput",
-          "schema": "system_network_io_bytes_total",
+          "name": "Network Traffic Sent",
+          "schema": "network_interface_bytes_sent_sec",
           "options": {
-            "label": "Bytes/sec",
+            "label": "kB/s",
             "order": 1,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Bytes/sec",
+              "yLabel": "kB/s",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -849,16 +849,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_io_bytes_total{ostype=~'linux',hostname=~'.*',direction='receive'}[5m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_bytes_received_sec{hostname=~'.*'}/ 1024&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network Rx Throughput",
-          "schema": "system_network_io_bytes_total",
+          "name": "Network Traffic Received",
+          "schema": "network_interface_bytes_received_sec",
           "options": {
-            "label": "Bytes/sec",
+            "label": "kB/s",
             "order": 2,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Bytes/sec",
+              "yLabel": "kB/s",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -868,16 +868,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_connections{ostype=~'linux',hostname=~'.*',state='ESTABLISHED'}[15m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_packets_received_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network connections",
-          "schema": "system_network_connections",
+          "name": "Network Packets Received",
+          "schema": "network_interface_packets_received_sec",
           "options": {
-            "label": "Connections/sec",
+            "label": "/sec",
             "order": 3,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Connections/sec",
+              "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -887,16 +887,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_dropped_total{ostype=~'linux',hostname=~'.*'}[15m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_packets_sent_sec{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network Packets Dropped",
-          "schema": "system_network_dropped_total",
+          "name": "Network Packets Sent",
+          "schema": "network_interface_packets_sent_sec",
           "options": {
-            "label": "Packets/sec",
+            "label": "/sec",
             "order": 4,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Packets/sec",
+              "yLabel": "/sec",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -906,16 +906,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_packets_total{ostype=~'linux',hostname=~'.*'}[15m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_packets_received_discarded{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network Packets Transferred",
-          "schema": "system_network_packets_total",
+          "name": "Network Incoming Packets Discarded",
+          "schema": "network_interface_packets_received_discarded",
           "options": {
-            "label": "Packets/sec",
+            "label": "",
             "order": 5,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Packets/sec",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -925,16 +925,16 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_errors_total{ostype=~'linux',hostname=~'.*',direction='receive'}[5m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_packets_outbound_discarded{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network Rx error rate",
-          "schema": "system_network_io_bytes_total",
+          "name": "Network Outgoing Packets Discarded",
+          "schema": "network_interface_packets_outbound_discarded",
           "options": {
-            "label": "Errors/sec",
+            "label": "",
             "order": 6,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Errors/sec",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
@@ -944,16 +944,35 @@
           "data_source_name": "Apica Monitoring"
         },
         {
-          "query": "round(sum by (hostname) (rate(system_network_errors_total{ostype=~'linux',hostname=~'.*',direction='transmit'}[5m])),0.01)&duration=1h&step=5m",
+          "query": "network_interface_packets_received_errors{hostname=~'.*'}&duration=1h&step=5m",
           "chart_type": "line",
-          "name": "Network Tx error rate",
-          "schema": "system_network_io_bytes_total",
+          "name": "Network Packets Received Errors",
+          "schema": "network_interface_packets_received_errors",
           "options": {
-            "label": "Errors/sec",
+            "label": "",
             "order": 7,
             "plot" : {
               "xLabel" : "Timestamp",
-              "yLabel": "Errors/sec",
+              "yLabel": "",
+              "x" : "Timestamp",
+              "y": ["value"],
+              "groupBy": "hostname",
+              "errorColumn": ""
+            }
+          },
+          "data_source_name": "Apica Monitoring"
+        },
+        {
+          "query": "network_interface_packets_outbound_errors{hostname=~'.*'}&duration=1h&step=5m",
+          "chart_type": "line",
+          "name": "Network Packets Outbound Errors",
+          "schema": "network_interface_packets_outbound_errors",
+          "options": {
+            "label": "",
+            "order": 8,
+            "plot" : {
+              "xLabel" : "Timestamp",
+              "yLabel": "",
               "x" : "Timestamp",
               "y": ["value"],
               "groupBy": "hostname",
