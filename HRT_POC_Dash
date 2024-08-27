@@ -1,7 +1,7 @@
 {
   "tabs": [
     {
-      "key": "system",
+      "key": "System",
       "title": "System",
       "order": "1",
       "type": "metrics",
@@ -231,8 +231,8 @@
       ]
     },
     {
-      "key": "CPU",
-      "title": "CPU",
+      "key": "Cpu",
+      "title": "Cpu",
       "type": "metrics",
       "order": "2",
       "queriesList": [
@@ -353,7 +353,7 @@
       ]
 },
     {
-      "key": "memory",
+      "key": "Memory",
       "title": "Memory",
       "type": "metrics",
       "order": "3",
@@ -588,7 +588,7 @@
       ]
     },
     {
-      "key": "disk",
+      "key": "Disk",
       "title": "Disk",
       "type": "metrics",
       "order": "4",
@@ -824,7 +824,7 @@
       ]
     },
     {
-      "key": "network",
+      "key": "Network",
       "title": "Network",
       "type": "metrics",
       "order": "5",
