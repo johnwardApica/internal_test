@@ -1234,9 +1234,9 @@
     "dateTimeRange": true,
     "dropdowns": [
       {
-        "atom": {
+        "hostname": {
           "query": "sum by (hostname) (sum by (hostname) (target_info{ostype=~'linux|windows'}))",
-          "name": "atom",
+          "name": "hostname",
           "data_source_name": "Apica Monitoring"
         }
       },
