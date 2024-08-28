@@ -1235,7 +1235,7 @@
     "dropdowns": [
       {
         "atom": {
-          "query": "sum by (hostname) (target_info{ostype=~'linux|windows',runtime=~'.*'})",
+          "query": "sum by (hostname) (target_info{hostname=~'demo-boomi-linux1|demo-boomi-linux2',runtime=~'.*'})",
           "name": "atom",
           "data_source_name": "Apica Monitoring"
         }
