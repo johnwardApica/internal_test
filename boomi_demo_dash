@@ -1236,14 +1236,14 @@
       {
         "atom": {
           "query": "sum by (hostname) (target_info{ostype=~'linux|windows',runtime=~'.*'})",
-          "name": "Atom Selection",
+          "name": "atom",
           "data_source_name": "Apica Monitoring"
         }
       },
      {
        "runtime": {
          "query": "sum by (runtime) (target_info{ostype=~'linux|windows'})",
-         "name": "Runtime selection",
+         "name": "runtime",
          "data_source_name": "Apica Monitoring"
        }
      }
