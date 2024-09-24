@@ -14,9 +14,9 @@
           "options": {
             "order": 1,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "Hours",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -32,9 +32,9 @@
           "options": {
             "order": 2,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -50,9 +50,9 @@
           "options": {
             "order": 3,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -68,9 +68,9 @@
           "options": {
             "order": 4,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -87,9 +87,9 @@
             "label": "calls/sec",
             "order": 5,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "calls/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -106,9 +106,9 @@
             "label": "switches/sec",
             "order": 6,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "switches/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -125,9 +125,9 @@
             "label": "operations/sec",
             "order": 7,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "operations/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -144,9 +144,9 @@
             "label": "operations/sec",
             "order": 8,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "operations/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -163,9 +163,9 @@
             "label": "%",
             "order": 9,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -182,9 +182,9 @@
             "label": "%",
             "order": 10,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -200,9 +200,9 @@
           "options": {
             "order": 11,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -218,9 +218,9 @@
           "options": {
             "order": 11,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "Bytes/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -245,9 +245,9 @@
             "label": "%",
             "order": 1,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -264,9 +264,9 @@
             "label": "%",
             "order": 2,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -283,9 +283,9 @@
             "label": "Actual",
             "order": 3,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -302,9 +302,9 @@
             "label": "Actual",
             "order": 4,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -321,9 +321,9 @@
             "label": "%",
             "order": 5,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -340,9 +340,9 @@
             "label": "%",
             "order": 6,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -366,9 +366,9 @@
           "options": {
             "order": 11,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -385,9 +385,9 @@
             "label": "GB",
             "order": 2,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -404,9 +404,9 @@
             "label": "/sec",
             "order": 3,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -423,9 +423,9 @@
             "label": "/sec",
             "order": 4,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -442,9 +442,9 @@
             "label": "/sec",
             "order": 5,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -461,9 +461,9 @@
             "label": "/sec",
             "order": 6,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -480,9 +480,9 @@
             "label": "/sec",
             "order": 7,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -499,9 +499,9 @@
             "label": "GB",
             "order": 8,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -518,9 +518,9 @@
             "label": "GB",
             "order": 10,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -537,9 +537,9 @@
             "label": "GB",
             "order": 11,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -556,9 +556,9 @@
             "label": "GB",
             "order": 12,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -575,9 +575,9 @@
             "label": "GB",
             "order": 12,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -602,9 +602,9 @@
             "label": "GB",
             "order": 1,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "GB",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -621,9 +621,9 @@
             "label": "GB",
             "order": 2,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -640,9 +640,9 @@
             "label": "",
             "order": 3,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -659,9 +659,9 @@
             "label": "",
             "order": 3,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -678,9 +678,9 @@
             "label": "",
             "order": 4,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -697,9 +697,9 @@
             "label": "",
             "order": 5,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -716,9 +716,9 @@
             "label": "",
             "order": 6,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -735,9 +735,9 @@
             "label": "",
             "order": 7,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "%",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -754,9 +754,9 @@
             "label": "",
             "order": 8,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "reads/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -773,9 +773,9 @@
             "label": "",
             "order": 9,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "writes/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -792,9 +792,9 @@
             "label": "",
             "order": 10,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "kB/s",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -811,9 +811,9 @@
             "label": "",
             "order": 11,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "kB/s",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -838,9 +838,9 @@
             "label": "kB/s",
             "order": 1,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "kB/s",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -857,9 +857,9 @@
             "label": "kB/s",
             "order": 2,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "kB/s",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -876,9 +876,9 @@
             "label": "/sec",
             "order": 3,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -895,9 +895,9 @@
             "label": "/sec",
             "order": 4,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "/sec",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -914,9 +914,9 @@
             "label": "",
             "order": 5,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -933,9 +933,9 @@
             "label": "",
             "order": 6,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -952,9 +952,9 @@
             "label": "",
             "order": 7,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
@@ -971,9 +971,9 @@
             "label": "",
             "order": 8,
             "plot" : {
-              "xLabel" : "Timestamp",
+              "xLabel" : "timestamp",
               "yLabel": "",
-              "x" : "Timestamp",
+              "x" : "timestamp",
               "y": ["value"],
               "groupBy": "hostname",
               "errorColumn": ""
