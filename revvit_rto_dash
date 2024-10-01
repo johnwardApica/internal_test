@@ -1220,14 +1220,6 @@
       "title": "Alerts",
       "order": "8",
       "type": "alerts"
-    },
-    {
-      "key": "logs",
-      "title": "Logs",
-      "order": "9",
-      "type": "logs",
-      "namespace": "otlplogs",
-      "app_name": "boomi"
     }
   ],
   "header": {
